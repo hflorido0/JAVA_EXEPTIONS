@@ -2,7 +2,7 @@ package exceptions;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExcepcionesNoBucle extends Exception{
+public class ExcepcionesInterrumpenPrograma extends Exception{
 	
 	//estas constantes me marcan la posición en el array "message"
 	public static final int ERROR_0 = 0;
@@ -13,16 +13,16 @@ public class ExcepcionesNoBucle extends Exception{
 	
 	/*al hacer el new de la excepción le paso el valor del array
 		del error*/
-	public ExcepcionesNoBucle (int value) {
+	public ExcepcionesInterrumpenPrograma (int value) {
 		this.value = value;
 	}
 	
 	/*aquí defino todos los mensajes. Accederé a ellos por posición
 		con las constantes*/
 	private List<String> message = Arrays.asList(
-				"Este es mi error 0 de ExcepcionesNoBucle",
-				"Este es mi error 1 de ExcepcionesNoBucle",
-				"Este es mi error 2 de ExcepcionesNoBucle"
+				"Este es mi error 0 de ExcepcionesInterrumpen",
+				"Este es mi error 1 de ExcepcionesInterrumpen",
+				"Este es mi error 2 de ExcepcionesInterrumpen"
 			);
 			
 	

@@ -1,7 +1,7 @@
 package manager;
 
 import exceptions.ExcepcionesBucle;
-import exceptions.ExcepcionesNoBucle;
+import exceptions.ExcepcionesInterrumpenPrograma;
 
 public class Manager {
 
@@ -17,27 +17,28 @@ public class Manager {
 		try {
 			menuEnBucle();
 			otrasFunciones();
-		} catch (ExcepcionesNoBucle e) {
+		} catch (ExcepcionesInterrumpenPrograma e) {
 			System.out.println(e.getMessage());
 		}
 		
 	}
 
 	//Quiero el menor número de try/cath, por lo que propago esta excepción al init().
-	private void otrasFunciones() throws ExcepcionesNoBucle {
+	private void otrasFunciones() throws ExcepcionesInterrumpenPrograma {
 		otraFuncionMas();
 		if (3 < 4) {
-			throw new ExcepcionesNoBucle(ExcepcionesNoBucle.ERROR_0);
-			/*esto equivale a: throw new ExcepcionesNoBucle(0); porque ExcepcionesNoBucle.ERROR_0
+			throw new ExcepcionesInterrumpenPrograma(ExcepcionesInterrumpenPrograma.ERROR_0);
+			/*esto equivale a: throw new ExcepcionesInterrumpen(0); porque ExcepcionesInterrumpen.ERROR_0
 			es una constante.*/
 		}
+		System.out.println("esto nunca se imprimirá");
 	}
 
 	//Quiero el menor número de try/cath, por lo que propago esta excepción a otrasFunciones().
-	private void otraFuncionMas() throws ExcepcionesNoBucle {
+	private void otraFuncionMas() throws ExcepcionesInterrumpenPrograma {
 		if (true) {
-			throw new ExcepcionesNoBucle(ExcepcionesNoBucle.ERROR_1);
-			/*esto evuicale a: throw new ExcepcionesNoBucle(1); porque ExcepcionesNoBucle.ERROR_1
+			throw new ExcepcionesInterrumpenPrograma(ExcepcionesInterrumpenPrograma.ERROR_1);
+			/*esto evuicale a: throw new ExcepcionesInterrumpen(1); porque ExcepcionesInterrumpen.ERROR_1
 			es una constante. */
 		}
 	}
@@ -46,7 +47,7 @@ public class Manager {
 		no las propago.
 	 Como las excpecionesNoBucle no las quiero capturar porque SÍ que interrumpen la ejecución 
 	 	del programa, las propago al init().*/
-	private void menuEnBucle() throws ExcepcionesNoBucle {
+	private void menuEnBucle() throws ExcepcionesInterrumpenPrograma  {
 		int lectura = 0;
 		while (lectura < 10) {
 			try {
